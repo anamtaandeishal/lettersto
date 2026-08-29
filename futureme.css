@@ -1,0 +1,979 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+height: 100%;
+    overflow: hidden;
+}
+body {
+    font-family: Georgia, "Times New Roman", serif;
+background: #3b2619;
+}
+.future-scene {
+    position: relative;
+width: 100vw;
+      height: 100vh;
+overflow: hidden;
+}
+.future-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.letter-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(38, 22, 14, 0.25);
+    padding: 25px;
+    animation: screenAppear 0.7s ease;
+}
+
+.future-letter {
+    position: relative;
+
+    width: min(760px, 90vw);
+    height: min(650px, 86vh);
+
+    padding: 40px 50px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ead6b2 0px,
+            #ead6b2 31px,
+            #b9986d 32px,
+            #ead6b2 33px
+        );
+
+    border: 11px solid #70452a;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.55),
+        inset 0 0 35px rgba(91,53,28,0.25);
+
+    transform: rotate(-1deg);
+}
+
+
+.future-letter::before,
+.future-letter::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    background: rgba(180,145,100,0.35);
+}
+
+.future-letter::before {
+    top: 0;
+    left: 0;
+}
+
+.future-letter::after {
+    right: 0;
+    bottom: 0;
+}
+
+
+.letter-decoration {
+    text-align: center;
+
+    color: #70452a;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+.future-letter h1 {
+    text-align: center;
+
+    color: #4d2d1c;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.letter-intro {
+    text-align: center;
+
+    color: #79563b;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+
+#futureLetter {
+    display: block;
+
+    width: 100%;
+    height: 360px;
+
+    resize: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #4a2b1b;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 18px;
+
+    line-height: 32px;
+
+    padding: 5px 10px;
+}
+
+
+.done-button {
+    display: block;
+
+    margin: 15px auto 0;
+
+    padding: 12px 40px;
+
+    border-radius: 25px;
+
+    border: 1px solid #70452b;
+
+    background: #70452b;
+
+    color: #fff4e5;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.done-button:hover {
+    transform: translateY(-2px);
+
+    background: #57351f;
+}
+
+.calendar-screen {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(38, 22, 14, 0.48);
+
+    backdrop-filter: blur(4px);
+}
+
+.calendar-screen.show {
+    display: flex;
+
+    animation: screenAppear 0.6s ease;
+}
+
+
+.calendar-card {
+    width: min(480px, 90vw);
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ead6b2 0px,
+            #ead6b2 31px,
+            #b9986d 32px,
+            #ead6b2 33px
+        );
+
+    border: 9px solid #70452a;
+
+    border-radius: 10px;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+
+    transform: rotate(1deg);
+}
+
+
+.calendar-decoration {
+    font-size: 30px;
+
+    color: #70452a;
+
+    margin-bottom: 15px;
+}
+
+
+.calendar-card h2 {
+    color: #4d2d1c;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    margin-bottom: 10px;
+}
+
+
+.calendar-card p {
+    color: #79563b;
+
+    margin-bottom: 25px;
+}
+
+
+#futureDate {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #9b7451;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.35);
+
+    color: #4d2d1c;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.calendar-continue {
+    padding: 12px 32px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: #70452a;
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.calendar-continue:hover {
+    transform: translateY(-2px);
+
+    background: #57351f;
+}
+.burial-screen {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 30;
+
+    display: none;
+
+    overflow: hidden;
+
+    background: #b9d8bd;
+}
+
+.burial-screen.show {
+    display: block;
+}
+
+
+
+.garden-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #9bc9d5 0%,
+            #c8dfc0 55%,
+            #8db46b 56%,
+            #628b4d 100%
+        );
+}
+
+
+.sun {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: #f5d58b;
+
+    top: 9%;
+    right: 13%;
+
+    box-shadow: 0 0 50px rgba(245,213,139,0.5);
+}
+
+
+.garden-cloud {
+    position: absolute;
+
+    width: 170px;
+    height: 45px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.65);
+}
+
+.cloud-one {
+    top: 18%;
+    left: 12%;
+}
+
+.cloud-two {
+    top: 28%;
+    right: 22%;
+}
+
+
+.hill {
+    position: absolute;
+
+    width: 100%;
+    height: 220px;
+
+    border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+    bottom: 30%;
+
+    left: -20%;
+
+    background: #8caf76;
+}
+
+.hill-front {
+    bottom: 15%;
+
+    right: -20%;
+
+    background: #769b5e;
+}
+
+
+.tree {
+    position: absolute;
+
+    bottom: 25%;
+}
+
+.tree-left {
+    left: 7%;
+}
+
+.tree-right {
+    right: 7%;
+}
+
+
+.tree-trunk {
+    width: 45px;
+    height: 180px;
+
+    margin: auto;
+
+    background: #765034;
+
+    border-radius: 15px;
+}
+
+
+.tree-top {
+    position: absolute;
+
+    width: 180px;
+    height: 150px;
+
+    top: -90px;
+    left: -65px;
+
+    border-radius: 50%;
+
+    background: #5f8951;
+
+    box-shadow:
+        55px 20px 0 #6f9859,
+        -35px 35px 0 #769e5e;
+}
+
+
+
+.ground {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 28%;
+
+    background:
+        repeating-linear-gradient(
+            15deg,
+            #76583b 0px,
+            #76583b 3px,
+            #816342 4px,
+            #816342 12px
+        );
+
+    border-top: 8px solid #597d47;
+}
+.person {
+    position: absolute;
+
+    z-index: 8;
+
+    left: 50%;
+
+    bottom: 29%;
+
+    width: 100px;
+    height: 230px;
+
+    transform: translateX(-50%);
+
+    display: none;
+}
+.person-head {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #c58e68;
+
+    left: 26px;
+    top: 0;
+}
+
+
+.person-body {
+    position: absolute;
+
+    width: 75px;
+    height: 105px;
+
+    border-radius: 35px 35px 15px 15px;
+
+    background: #70452a;
+
+    left: 12px;
+    top: 48px;
+}
+
+
+.person-arm {
+    position: absolute;
+
+    width: 75px;
+    height: 17px;
+
+    border-radius: 15px;
+
+    background: #c58e68;
+
+    top: 70px;
+    left: 35px;
+
+    transform: rotate(25deg);
+
+    transform-origin: left center;
+}
+
+
+.person-leg {
+    position: absolute;
+
+    width: 20px;
+    height: 85px;
+
+    background: #4d392d;
+
+    top: 145px;
+
+    border-radius: 10px;
+}
+
+.leg-one {
+    left: 28px;
+
+    transform: rotate(5deg);
+}
+
+.leg-two {
+    right: 28px;
+
+    transform: rotate(-5deg);
+}
+.little-letter {
+    position: absolute;
+
+    z-index: 12;
+
+    left: 48%;
+    bottom: 47%;
+
+    width: 70px;
+    height: 48px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: #ead6b2;
+
+    border: 2px solid #70452a;
+
+    color: #70452a;
+
+    font-size: 22px;
+
+    transform: rotate(-8deg);
+}
+
+.wooden-box {
+    position: absolute;
+
+    z-index: 11;
+
+    left: 48%;
+    bottom: 32%;
+
+    width: 120px;
+    height: 75px;
+
+    display: none;
+}
+
+.box-body {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 120px;
+    height: 58px;
+
+    background: #70452a;
+
+    border: 5px solid #4d2d1c;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+   align-items: center;
+
+    color: #e8c99d;
+
+    font-size: 25px;
+}
+
+
+.box-lid {
+    position: absolute;
+
+    width: 128px;
+    height: 18px;
+
+    left: -4px;
+    top: 0;
+
+    background: #8a5b35;
+
+    border: 4px solid #4d2d1c;
+
+    border-radius: 4px;
+
+    transform-origin: bottom left;
+}
+.shovel {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 58%;
+
+    bottom: 32%;
+
+    width: 30px;
+    height: 150px;
+
+    display: none;
+
+    transform: rotate(15deg);
+}
+
+
+.shovel-handle {
+    width: 9px;
+    height: 115px;
+
+    margin: auto;
+
+    background: #684529;
+
+    border-radius: 5px;
+}
+
+
+.shovel-blade {
+    position: absolute;
+
+    bottom: 0;
+    left: -10px;
+
+    width: 50px;
+    height: 48px;
+
+    background: #77736a;
+
+    border-radius: 5px 5px 25px 25px;
+}
+
+.hole {
+    position: absolute;
+
+    z-index: 7;
+
+    left: 50%;
+    bottom: 23%;
+
+    width: 160px;
+    height: 45px;
+
+    margin-left: -80px;
+
+    display: none;
+
+    border-radius: 50%;
+
+    background: #38271b;
+
+    box-shadow: inset 0 10px 15px rgba(0,0,0,0.4);
+}
+
+.animation-text {
+    position: absolute;
+    z-index: 20;
+    top: 8%;
+    width: 100%;
+    text-align: center;
+    color: #fff8ed;
+    font-size: 25px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    opacity: 0;
+}
+.final-message {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(40,28,18,0.28);
+    backdrop-filter: blur(3px);
+}
+.final-message.show {
+    display: flex;
+    animation: screenAppear 0.8s ease;
+}
+.final-card {
+    width: min(470px, 90vw);
+    padding: 42px;
+    text-align: center;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ead6b2 0px,
+            #ead6b2 31px,
+            #b9986d 32px,
+            #ead6b2 33px
+        );
+    border: 8px solid #70452a;
+    border-radius: 9px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+    transform: rotate(-1deg);
+}
+.final-stars {
+    color: #70452a;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+.final-card h2 {
+    color: #4d2d1c;
+    margin-bottom: 12px;
+}
+.final-card p {
+    color: #70452a;
+    margin: 8px;
+}
+#chosenDate {
+    display: block;
+
+    color: #4d2d1c;
+
+    font-size: 20px;
+    margin: 12px 0;
+}
+.final-small {
+    font-style: italic;
+    margin-top: 20px !important;
+}
+.final-card button {
+    margin-top: 15px;
+
+    padding: 11px 30px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: #70452a;
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes screenAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.person.walking {
+    display: block;
+
+    animation:
+        personWalk 3s ease forwards;
+}
+
+
+@keyframes personWalk {
+
+    from {
+        left: -15%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+.little-letter.show {
+    display: flex;
+
+    animation: letterToBox 2s ease forwards;
+}
+
+
+@keyframes letterToBox {
+
+    0% {
+        opacity: 0;
+
+        transform:
+        translate(-200px,-40px)
+            rotate(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform:
+translate(0,0)
+                       rotate(-8deg);
+    }
+}
+.wooden-box.show {
+    display: block;
+    animation: boxAppear 1s ease;
+}
+@keyframes boxAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.wooden-box.close-box .box-lid {
+    animation: closeLid 0.8s ease forwards;
+}
+
+@keyframes closeLid {
+    from {
+        transform: rotate(-35deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+.shovel.show {
+    display: block;
+    animation: digging 2.2s ease-in-out infinite;
+}
+@keyframes digging {
+
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+.hole.show {
+    display: block;
+
+    animation: holeGrow 1s ease forwards;
+}
+
+
+@keyframes holeGrow {
+
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+.wooden-box.bury {
+    display: block;
+
+    animation: buryBox 3s ease forwards;
+}
+
+
+@keyframes buryBox {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(110px) scale(0.75);
+        opacity: 0;
+    }
+}
+.buried-marker {
+    position: absolute;
+
+    z-index: 15;
+
+    left: 50%;
+    bottom: 23%;
+
+    transform: translateX(-50%);
+
+    display: none;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    background: #d7b07b;
+    border: 5px solid #70452a;
+    justify-content: center;
+    align-items: center;
+    color: #70452a;
+    font-size: 25px;
+}
+.buried-marker.show {
+    display: flex;
+    animation: markerAppear 1s ease;
+}
+@keyframes markerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}

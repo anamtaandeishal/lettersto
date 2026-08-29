@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Letter | Letter.To</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="side-decoration left">
+<div class="letter-card pink">
+            Dear stranger <br><br>
+            Hope you're having a lovely day...
+</div>
+ <div class="letter-card yellow">
+            little note<br><br>
+            some thoughts from today 
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="side-decoration right">
+
+        <div class="letter-card blue">
+            Dear future me,<br><br>
+            I wonder where you'll be someday...
+        </div>
+
+        <div class="letter-card green">
+            A little note<br><br>
+            just wanted to say ily
+        </div>
+
+    </div>
+    <main class="writer-page">
+        <p class="small-title">LETTER.TO</p>
+        <h1>Where will your words go?</h1>
+        <p class="intro">
+            Choose a place for your thoughts, memories,
+            hopes, or words to find their way.
+        </p>
+        <div class="options">
+            <button class="option" onclick="openPage('diary')">
+                <div class="icon">
+                    <img src="diaryimg.jpeg" alt="Personal Diary">
+                </div>
+                <h2>Personal Diary</h2>
+                <p>
+                    Enjoy a moment with yourself in a safe
+                    space and write your thoughts.
+                </p>
+            </button>
+            <button class="option" onclick="openPage('future')">
+                <div class="icon">
+                    <img src="clockimg.jpeg" alt="Dear Future Me">
+                </div>
+                <h2>Dear Future Me</h2>
+                <p>
+                    Write a letter to the person you're
+                    becoming and seal your words inside
+                    a time capsule.
+                </p>
+            </button>
+            <button class="option" onclick="openPage('fighters')">
+
+                <div class="icon">
+                    <img src="plantimg.jpeg" alt="Letters to Fighters">
+                </div>
+
+                <h2>Letters to Fighters</h2>
+                <p>
+                    Write a letter filled with courage,
+                    kindness, and hope for a young
+                    cancer fighter.
+                </p>
+            </button>
+            <button class="option" onclick="openPage('lovedone')">
+                <div class="icon">
+                    <img src="envelopeimg.jpeg" alt="Letters to a Loved One">
+                </div>
+                <h2>Letters to a Loved One</h2>
+                <p>
+                    Write a letter to someone you love
+                    and say the words that matter.
+                </p>
+            </button>
+        </div>
+        <div id="message" class="message">
+            <div id="messageIcon"></div>
+            <h2 id="messageTitle"></h2>
+            <p id="messageText"></p>
+            <button onclick="closeMessage()" class="back-button">
+            </button>
+
+        </div>
+    </main>
+    <script src="2.js"></script>
+</body>
+</html>

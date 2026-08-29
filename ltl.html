@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Letter To A Loved One</title>
+
+    <link rel="stylesheet" href="ltl.css">
+</head>
+
+<body>
+
+    
+    <main class="ltl-scene">
+
+        
+        <img
+            src="beach.jpeg"
+            class="background-image"
+            alt="Background"
+        >
+
+
+        
+
+        <div class="writing-screen" id="writingScreen">
+
+
+           
+            <div class="color-options">
+
+                <p>Paper</p>
+
+                <button class="color-circle cream"></button>
+
+                <button class="color-circle pink"></button>
+
+                <button class="color-circle blue"></button>
+
+                <button class="color-circle lavender"></button>
+
+                <button class="color-circle green"></button>
+
+            </div>
+
+
+           
+
+            <div class="letter-paper">
+
+                <div class="letter-header">
+
+                    <span>
+                        Dear someone special,
+                    </span>
+
+                    <input
+                        type="date"
+                        id="letterDate"
+                    >
+
+                </div>
+
+
+                <textarea
+                    id="loveLetter"
+                    placeholder="Write your letter here..."
+                ></textarea>
+
+
+                <div class="letter-footer">
+
+                    <span>
+                        With love ♡
+                    </span>
+
+                    <button
+                        id="doneButton"
+                        onclick="finishLetter()"
+                    >
+                        Done
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+       
+        <div
+            class="animation-screen"
+            id="oceanAnimation"
+        >
+
+          
+
+            <div class="day-sky">
+
+                <div class="sun"></div>
+
+                <div class="cloud cloud-one"></div>
+
+                <div class="cloud cloud-two"></div>
+
+            </div>
+
+
+            <div class="sea">
+
+                <div class="wave wave-one"></div>
+
+                <div class="wave wave-two"></div>
+
+                <div class="wave wave-three"></div>
+
+            </div>
+
+
+            <div class="sand">
+
+                <div
+                    class="animation-letter"
+                    id="animationLetter"
+                >
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <div
+                    class="bottle"
+                    id="bottle"
+                >
+
+                    <div class="bottle-neck"></div>
+
+
+                    <div class="bottle-body">
+
+                        <div class="bottle-cork"></div>
+
+
+                       
+
+                        <div
+                            class="letter-inside"
+                            id="letterInside"
+                        >
+                            ♡
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+
+
+
+
+
+
+            
+            <div
+                class="animation-text"
+                id="animationText"
+            >
+                Your letter is ready... ♡
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="ltl.js"></script>
+
+</body>
+</html>

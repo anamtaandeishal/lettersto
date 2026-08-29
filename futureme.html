@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dear Future Me | Letter.To</title>
+
+    <link rel="stylesheet" href="futureme.css">
+</head>
+
+<body>
+
+    <main class="future-scene">
+        <img
+            src="futureme.jpeg"
+            class="future-background"
+            alt="Cozy porch"
+        >
+
+        <section class="letter-screen" id="letterScreen">
+
+            <div class="future-letter">
+
+                <div class="letter-decoration">
+                    ✦ &nbsp; ♡ &nbsp; ✦
+                </div>
+
+                <h1>Dear Future Me,</h1>
+
+                <p class="letter-intro">
+                    A little something for you to read someday...
+                </p>
+
+                <textarea
+                    id="futureLetter"
+                    placeholder="Write a letter to your future self..."
+                ></textarea>
+
+                <button
+                    class="done-button"
+                    onclick="finishLetter()"
+                >
+                    Done ♡
+                </button>
+
+            </div>
+
+        </section>
+
+
+       
+        <section class="calendar-screen" id="calendarScreen">
+
+            <div class="calendar-card">
+
+                <div class="calendar-decoration">
+                    ✦
+                </div>
+
+                <h2>Choose when you want<br>to open this letter.</h2>
+
+                <p>
+                    Pick a date in the future.
+                </p>
+
+                <input
+                    type="date"
+                    id="futureDate"
+                >
+
+                <button
+                    class="calendar-continue"
+                    onclick="startBurial()"
+                >
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="burial-screen" id="burialScreen">
+            <div class="garden-background">
+
+                <div class="sun"></div>
+
+                <div class="garden-cloud cloud-one"></div>
+                <div class="garden-cloud cloud-two"></div>
+
+                <div class="hill hill-back"></div>
+                <div class="hill hill-front"></div>
+
+                <div class="tree tree-left">
+                    <div class="tree-trunk"></div>
+                    <div class="tree-top"></div>
+                </div>
+
+                <div class="tree tree-right">
+                    <div class="tree-trunk"></div>
+                    <div class="tree-top"></div>
+                </div>
+
+                <div class="ground"></div>
+
+            </div>
+            <div class="animation-text" id="animationText">
+                Your letter is being kept safe...
+            </div>
+
+            <div class="person" id="person">
+
+                <div class="person-head"></div>
+
+                <div class="person-body"></div>
+
+                <div class="person-arm"></div>
+
+                <div class="person-leg leg-one"></div>
+                <div class="person-leg leg-two"></div>
+
+            </div>
+            <div class="little-letter" id="littleLetter">
+                ♡
+            </div>
+
+            <div class="wooden-box" id="woodenBox">
+
+                <div class="box-lid"></div>
+
+                <div class="box-body">
+                    <span>♡</span>
+                </div>
+
+            </div>
+            <div class="shovel" id="shovel">
+
+                <div class="shovel-handle"></div>
+
+                <div class="shovel-blade"></div>
+
+            </div>
+
+            <div class="hole" id="hole"></div>
+
+            <div class="buried-marker" id="buriedMarker">
+                <span>♡</span>
+            </div>
+
+
+            <div class="final-message" id="finalMessage">
+
+                <div class="final-card">
+
+                    <div class="final-stars">
+                        ✦ &nbsp; ♡ &nbsp; ✦
+                    </div>
+
+                    <h2>Your letter is buried.</h2>
+
+                    <p>
+                        It will wait here until
+                    </p>
+
+                    <strong id="chosenDate"></strong>
+
+                    <p class="final-small">
+                        Until then, let time keep it safe. ♡
+                    </p>
+
+                    <button onclick="goBack()">
+                        Return
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="futureme.js"></script>
+
+</body>
+</html>

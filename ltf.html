@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Letters to Fighters | Letter.To</title>
+
+    <link rel="stylesheet" href="ltf.css">
+</head>
+
+<body>
+
+<main class="ltf-container">
+    <section class="intro-screen" id="introScreen">
+
+        <div class="intro-card">
+
+            <div class="intro-decoration">
+                ✦ &nbsp; ♡ &nbsp; ✦
+            </div>
+
+            <h1>Letters to Fighters</h1>
+
+            <p>
+                A few words can make a child's day perfect as well.
+            </p>
+
+            <p>
+                Through Letter.To, you can write a letter of
+                encouragement to a young cancer fighter or survivor
+                from anywhere in the world. Your words can be a
+                reminder that they are seen, supported, and never
+                alone in their journey.
+            </p>
+
+            <p>
+                You don’t need to know their story or have the perfect
+                words. Just write something kind, something that might
+                brighten their day, give them a little hope, and be the
+                start of a perfect day for them.
+            </p>
+
+            <p class="ready-text">
+                Ready to write a letter?
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="openWritingScreen()"
+            >
+                Write a Letter →
+            </button>
+
+        </div>
+
+    </section>
+    <section class="writing-screen" id="writingScreen">
+
+
+        <img
+            src="ltfbg.jpeg"
+            class="writing-background"
+            alt="Writing scene"
+        >
+
+
+        <div class="writing-overlay"></div>
+
+        <div class="letter-paper">
+
+            <div class="paper-decoration">
+                ✦ &nbsp; ♡ &nbsp; ✦
+            </div>
+
+            <h2>Dear Fighter,</h2>
+
+            <p class="paper-subtitle">
+                Write something kind.
+            </p>
+
+            <textarea
+                id="fighterLetter"
+                placeholder="Write your letter here..."
+            ></textarea>
+
+            <button
+                class="next-button"
+                onclick="goToToySelection()"
+            >
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+    <section class="toy-screen" id="toyScreen">
+
+        <div class="toy-selection-card">
+
+            <h1>Select anyone</h1>
+
+            <p class="toy-subtitle">
+                Choose a little companion for your letter.
+            </p>
+
+
+            <div class="toy-row">
+
+                <div class="toy-option">
+                    <img
+                        src="bear.jpeg"
+                        class="toy-image"
+                        alt="Brown teddy bear"
+                    >
+
+                    <button
+                        class="select-button"
+                        onclick="selectBear()"
+                    >
+                        Select
+                    </button>
+
+                </div>
+
+                <div class="toy-option">
+                    <img
+                        src="bunny.jpeg"
+                        class="toy-image"
+                        alt="Children's toy"
+                    >
+
+                    <button
+                        class="select-button disabled"
+                        disabled
+                    >
+                        Select
+                    </button>
+
+                </div>
+
+                <div class="toy-option">
+                    <img
+                        src="toy.jpeg"
+                        class="toy-image"
+                        alt="Children's toy"
+                    >
+
+                    <button
+                        class="select-button disabled"
+                        disabled
+                    >
+                        Select
+                    </button>
+
+                </div>
+
+
+                
+
+                <div class="toy-option">
+
+
+                    <img
+                        src="penguin.jpeg"
+                        class="toy-image"
+                        alt="Children's toy"
+                    >
+
+                    <button
+                        class="select-button disabled"
+                        disabled
+                    >
+                        Select
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bear-animation-screen" id="bearAnimationScreen">
+
+        <div class="animation-background"></div>
+
+        <div
+            class="animation-message"
+            id="animationMessage"
+        >
+            Preparing your letter...
+        </div>
+
+
+        
+        <div
+            class="teddy-bear"
+            id="teddyBear"
+        >
+
+            <div class="bear-ear left-ear"></div>
+            <div class="bear-ear right-ear"></div>
+
+            <div class="bear-head">
+
+                <div class="bear-eye left-eye"></div>
+                <div class="bear-eye right-eye"></div>
+
+                <div class="bear-muzzle">
+                    <div class="bear-nose"></div>
+                </div>
+
+            </div>
+
+            <div class="bear-body"></div>
+
+            <div class="bear-arm left-arm"></div>
+            <div class="bear-arm right-arm"></div>
+
+            <div class="bear-foot left-foot"></div>
+            <div class="bear-foot right-foot"></div>
+
+        </div>
+
+        <div
+            class="moving-letter"
+            id="movingLetter"
+        >
+            <span>♡</span>
+        </div>
+
+
+        <!-- COURER BOX -->
+
+        <div
+            class="courier-box"
+            id="courierBox"
+        >
+
+            <div class="box-flap"></div>
+
+            <div class="box-body">
+
+                <div class="box-tape"></div>
+
+                <span>LETTER.TO</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <div
+            class="finished-message"
+            id="finishedMessage"
+        >
+
+            <div class="finished-card">
+
+                <div class="finished-decoration">
+                    ✦ &nbsp; ♡ &nbsp; ✦
+                </div>
+
+                <h2>Your letter is ready.</h2>
+
+                <p>
+                    A little kindness is on its way.
+                </p>
+
+                <button onclick="returnToHome()">
+                    Return
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="ltf.js"></script>
+
+</body>
+</html>
